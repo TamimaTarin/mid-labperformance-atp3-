@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee List</title>
+</head>
+<body>
+	<div>
+			<h2>Employee List</h2> 		
+	</div>
+
+	<a href="/home">Back</a>|
+	<a href="/logout">Logout</a><br>
+
+	<table border="1">
+		<tr>
+			<td>Id</td>
+			<td>EmployeeName</td>
+			<td>Contact no</td>
+			<td>UserName</td>
+			<td>Password</td>
+			<td>ACTION</td>
+		</tr>
+	<% for(var i=0; i < employeelist.length; i++){ %>
+		<tr>
+			<td><%= employeelist[i].id %></td>
+			<td><%= employeelist[i].ename %></td>
+			<td><%= employeelist[i].contno %></td>
+			<td><%= employeelist[i].uname %></td>
+			<td><%= employeelist[i].password %></td>
+		
+			<td>
+				<a href="/home/update/<%= employeelist[i].id %>">Update</a> | 
+				<a href="/update">DELETE</a> 
+			</td>
+		</tr>
+	<%  } %>
+	</table>
+
+</body>
+</html>
